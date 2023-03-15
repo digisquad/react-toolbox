@@ -1,0 +1,42 @@
+name: React-toolbox app CI
+
+on:
+    push:
+        branches:
+            - develop
+            - main
+    pull_request:
+
+jobs:
+    build-and-test:
+        name: Build and Test and Deploy
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Install local dependencies
+              run: yarn install
+
+
+            - name: Check format code EsLint
+              run: yarn eslint .
+              
+            - name: Building
+              run: yarn build
+
+            - name: Deploy to Firebase
+              uses: w9jds/firebase-action@master
+              if: endsWith(github.ref, 'develop') == true
+              with:
+                  args: deploy --only hosting
+              env:
+                  FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+    delete-artifacts:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: kolpav/purge-artifacts-action@v1
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  expire-in: 0
