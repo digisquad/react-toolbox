@@ -6,7 +6,8 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "reset": "nx reset"
+    "reset": "nx reset",
+    "deploy:firebase": "firebase deploy --only hosting"
   },
   "private": true,
   "devDependencies": {
@@ -68,6 +69,7 @@
   "dependencies": {
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
+    "firebase": "^9.18.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tslib": "^2.3.0"

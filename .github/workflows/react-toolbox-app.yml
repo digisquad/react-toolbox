@@ -1,11 +1,10 @@
+---
 name: react-toolbox-app
-
 on:
   push:
     branches:
       - main
-  pull_request:
-
+  pull_request: null
 jobs:
   main:
     name: Nx Cloud - Main Job
@@ -16,11 +15,20 @@ jobs:
         yarn nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
       parallel-commands: |
         yarn nx-cloud record -- yarn nx format:check
-      parallel-commands-on-agents: |
+      parallel-commands-on-agents: >
         yarn nx affected --target=lint --parallel=3
+
         yarn nx affected --target=test --parallel=3 --ci --code-coverage
+
         yarn nx affected --target=build --parallel=3
 
+      deployment:
+        - run: yarn run build
+        - uses: FirebaseExtended/action-hosting-deploy@v0
+          with:
+            repoToken: ${{ secrets.GITHUB_TOKEN }}
+            firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TOOLBOX_785C5 }}
+            projectId: react-toolbox-785c5
   agents:
     name: Nx Cloud - Agents
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.11.3
