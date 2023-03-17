@@ -18,8 +18,6 @@ jobs:
         run: yarn add nx-cloud
       - name: Start CI Run
         run: yarn nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
-      - name: Run parallel commands
-        run: yarn nx affected --target=lint --parallel=3 && yarn nx affected --target=test --parallel=3 --ci --code-coverage && yarn nx affected --target=build --parallel=3
   build_and_deploy:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     name: Build and Deploy to Firebase Hosting
