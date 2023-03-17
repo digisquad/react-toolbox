@@ -20,23 +20,7 @@ jobs:
         yarn nx affected --target=lint --parallel=3
         yarn nx affected --target=test --parallel=3 --ci --code-coverage
         yarn nx affected --target=build --parallel=3
-  deploy:
-    runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
-      
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build app
-        run: nx build react-toolbox
-
-      - name: Deploy to Nx Cloud
-        uses: nrwl/nx-cloud-github-action@v1
-        with:
-          workspaceSlug: react-toolbox
-          token: ${{ secrets.NX_CLOUD_TOKEN }}
   agents:
     name: Nx Cloud - Agents
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.11.3
