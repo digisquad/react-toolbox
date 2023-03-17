@@ -1,31 +1,35 @@
 name: react-toolbox-app
+
 on:
   push:
     branches:
       - main
   pull_request:
-    branches:
-      - main
+
 jobs:
-  nx_cloud:
+  main:
+    name: Nx Cloud - Main Job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: nrwl/nx-cloud-github-action@v1
-        with:
-          nx_version: 'latest'
-          command: 'yarn nx run-many --target=build --all --parallel'
-          working_directory: 'apps'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-  firebase_deploy:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      - name: Install dependencies
+        run: yarn install
+      - name: Install Nx Cloud
+        run: yarn add nx-cloud
+      - name: Start CI Run
+        run: yarn nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
+  build_and_deploy:
+    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
+    name: Build and Deploy to Firebase Hosting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: yarn install
-      - run: yarn build
+      - name: Install dependencies
+        run: yarn install
+      - name: Build for Production
+        run: yarn build --prod
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TOOLBOX_785C5 }}
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TOOLBOX_785C5 }}'
           projectId: react-toolbox-785c5
