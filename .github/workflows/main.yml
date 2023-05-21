@@ -4,6 +4,17 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - main
 jobs:
+  main:
+    name: Nx Cloud - Main Job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Install Nx Cloud
+        run: yarn add nx-cloud
+      - name: Start CI Run
+        run: yarn nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
