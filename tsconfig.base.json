@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@react-toolbox/shared/ui": ["shared/ui/src/index.ts"]
+      "@react-toolbox/shared/ui": ["shared/ui/src/index.ts"],
+      "@*": ["src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
