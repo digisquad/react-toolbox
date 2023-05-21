@@ -1,17 +1,41 @@
 {
-  "name": "react-toolbox",
+  "name": "@digital-squad/react-toolbox",
   "version": "0.0.0",
+  "description": "a components library that manage your design system along side with your developer experinece and your ",
+  "keywords": [
+    "compoenents",
+    "ui",
+    "ux",
+    "dx",
+    "dls",
+    "design",
+    "design system",
+    "design langauge system"
+  ],
+  "homepage": "https://react-toolbox-785c5.web.app/",
+  "repository": {
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/digisquad/react-toolbox"
+    }
+  },
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
+    "test:coverage": "nx test",
     "reset": "nx reset",
-    "deploy:firebase": "firebase deploy --only hosting"
+    "deploy:firebase": "firebase deploy --only hosting",
+    "lint": "nx lint ",
+    "lint:fix": "nx lint --fix",
+    "types": "tsc --noEmit",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook"
+
   },
   "private": true,
   "devDependencies": {
-    "@babel/core": "7.12.13",
     "@babel/preset-typescript": "7.12.13",
     "@emotion/babel-plugin": "11.10.5",
     "@nrwl/cypress": "^15.7.1",
@@ -39,8 +63,6 @@
     "@vitejs/plugin-react": "^3.0.0",
     "@vitest/coverage-c8": "~0.25.8",
     "@vitest/ui": "^0.25.8",
-    "babel-jest": "28.1.1",
-    "babel-loader": "8.1.0",
     "cypress": "^12.2.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
@@ -67,11 +89,19 @@
     "vitest": "^0.25.8"
   },
   "dependencies": {
-    "@emotion/react": "11.10.5",
-    "@emotion/styled": "11.10.5",
+    "@chakra-ui/react": "^2.6.1",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^4.5.8",
     "firebase": "^9.18.0",
+    "framer-motion": "^10.12.12",
     "react": "18.2.0",
+    "react-day-picker": "^8.7.1",
     "react-dom": "18.2.0",
     "tslib": "^2.3.0"
+  },
+  "bugs": {
+    "url": "https://github.com/digisquad/react-toolbox/issues"
   }
+
 }
