@@ -1,4 +1,4 @@
-name: react-toolbox-app
+name: feature
 
 on:
   pull_request:

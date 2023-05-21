@@ -1,4 +1,4 @@
-name: react-toolbox-app
+name: main
 
 on:
   push:
