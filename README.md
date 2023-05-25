@@ -1,7 +1,7 @@
 <img width="190" alt="react-toolbox logo" src="https://github.com/digisquad/react-toolbox/assets/10932367/3635c391-b2be-45f3-a90c-95df40d96855">
 
 # React toolbox
-A highly scalable architecture to start your digital product in clean way so you can develop your product fastly with smooth developer experience and  greate user experience.
+React toolbox is a cutting-edge web project starter template designed to provide a highly scalable architecture for launching your digital product. By adopting this template, you can kickstart your development process in a clean and efficient manner, enabling rapid product development. Experience the seamless developer journey and deliver exceptional user experiences with ease.
 
 
 
