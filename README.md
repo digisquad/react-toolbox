@@ -1,6 +1,6 @@
+<img width="190" alt="react-toolbox logo" src="https://github.com/digisquad/react-toolbox/assets/10932367/3635c391-b2be-45f3-a90c-95df40d96855">
 
 # React toolbox
-
 A highly scalable architecture to start your digital product in clean way so you can develop your product fastly with smooth developer experience and  greate user experience.
 
 
