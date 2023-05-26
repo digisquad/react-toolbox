@@ -5,7 +5,8 @@
     "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "@*": ["src/*"]
+      "@*": ["src/*"],
+      "@react-toolbox/shared*": ["shared/ui/src/*"]
     }
   },
   "files": [

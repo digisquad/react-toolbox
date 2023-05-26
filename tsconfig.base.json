@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@react-toolbox/shared/ui": ["shared/ui/src/index.ts"],
+      "@react-toolbox/shared*": ["shared/ui/src/*"],
       "@*": ["src/*"]
     }
   },
