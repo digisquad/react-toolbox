@@ -1,5 +1,5 @@
 import NxWelcome from './nx-welcome';
-import Providers from '@providers';
+import Providers from '@react-toolbox/shared/providers';
 
 
 

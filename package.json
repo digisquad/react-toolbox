@@ -30,12 +30,12 @@
     "lint": "nx lint ",
     "lint:fix": "nx lint --fix",
     "types": "tsc --noEmit",
-    "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook"
-
+    "storybook": "nx storybook react-toolbox",
+    "storybook:build": "nx build-storybook react toolbox"
   },
   "private": true,
   "devDependencies": {
+    "@babel/core": "7.12.13",
     "@babel/preset-typescript": "7.12.13",
     "@emotion/babel-plugin": "11.10.5",
     "@nrwl/cypress": "^15.7.1",
@@ -63,6 +63,8 @@
     "@vitejs/plugin-react": "^3.0.0",
     "@vitest/coverage-c8": "~0.25.8",
     "@vitest/ui": "^0.25.8",
+    "babel-jest": "28.1.1",
+    "babel-loader": "8.1.0",
     "cypress": "^12.2.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
