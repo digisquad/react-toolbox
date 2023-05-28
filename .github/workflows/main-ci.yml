@@ -1,10 +1,9 @@
-name: react-toolbox-app
+name: main
 
 on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
   main:
@@ -33,3 +32,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TOOLBOX_785C5 }}'
           projectId: react-toolbox-785c5
+          channelId: live
