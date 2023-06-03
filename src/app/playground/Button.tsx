@@ -1,14 +1,9 @@
-import { Button as ChakraButton } from '@chakra-ui/react'
-
-
-
-
+import { Button as ChakraButton } from '@chakra-ui/react';
 
 const Button = () => {
-
-
-    return <ChakraButton colorScheme='rose' />
-}
-
+  return (
+        <ChakraButton variant="@primary" >save</ChakraButton>
+  );
+};
 
 export default Button;

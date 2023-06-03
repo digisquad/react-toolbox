@@ -7,7 +7,10 @@ module.exports = {
     '../src/app/**/*.stories.mdx',
     '../src/app/**/*.stories.@(js|jsx|ts|tsx)',
   ],
-  addons: ['@storybook/addon-essentials'],
+  addons: ['@storybook/addon-essentials', '@chakra-ui/storybook-addon'],
+  features: {
+    emotionAlias: false,
+  },
   async viteFinal(config, { configType }) {
     return mergeConfig(config, {
       plugins: [
