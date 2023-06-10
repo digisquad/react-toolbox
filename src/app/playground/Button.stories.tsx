@@ -4,7 +4,7 @@ import Button from './Button';
 
 
 export default {
-    title: 'playground/Button',
+    title: 'Components/Button',
 };
 
 export const Default = () => {
