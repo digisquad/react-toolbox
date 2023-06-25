@@ -4,6 +4,7 @@ import { Badge, BadgeProps, Divider, Stack, Text } from '@chakra-ui/react';
 import { IconType } from 'react-icons/lib';
 
 import { Icon } from '../Icons';
+import Maybe from "@lib/Maybe";
 
 interface BadgeIndicatorProps extends BadgeProps {
   icon?: IconType;
@@ -29,16 +30,17 @@ export const BadgeIndicator: React.FC<BadgeIndicatorProps> = ({
       {...rest}
     >
       <Stack direction="row" alignItems="center" spacing={1} py={icon ? undefined : '0.2rem'}>
-        {icon && <Icon icon={icon} fontSize="md" />}
-
-        {label && (
-          <>
-            <Text fontSize="xs" fontWeight="bold" px="1">
-              {label}
-            </Text>
-            <Divider orientation="vertical" w={1} h="0.7rem" borderColor={`${colorScheme ?? colorCurrent}.300`} />
-          </>
-        )}
+        <Maybe condition={icon} >
+          <Icon icon={icon} fontSize="md" />
+        </Maybe>
+        <Maybe condition={label} >
+          [
+          <Text key="text" fontSize="xs" fontWeight="bold" px="1">
+            {label}
+          </Text>,
+          <Divider key="divider" orientation="vertical" w={1} h="0.7rem" borderColor={`${colorScheme ?? colorCurrent}.300`} />
+          ]
+        </Maybe>
         <Text fontSize="xs">{count && !Number.isNaN(count) ? count : '-'}</Text>
       </Stack>
     </Badge>
