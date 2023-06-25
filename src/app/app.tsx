@@ -1,14 +1,8 @@
-import NxWelcome from './nx-welcome';
-import Providers from '@react-toolbox/shared/providers';
+import Main from '@react-toolbox/shared/lib/main';
+import Providers from '@react-toolbox/sharedproviders/';
 
-
-
-export function App() {
-  return (
-    <Providers>
-      <NxWelcome title="react-toolbox" />
-    </Providers>
-  );
-}
+const App = () => {
+  return <Providers><Main /></Providers>;
+};
 
 export default App;
