@@ -4,7 +4,7 @@ import { Badge, BadgeProps, Divider, Stack, Text } from '@chakra-ui/react';
 import { IconType } from 'react-icons/lib';
 
 import { Icon } from '../Icons';
-import Maybe from "@lib/Maybe";
+import Maybe from "@lib/hoc/Maybe";
 
 interface BadgeIndicatorProps extends BadgeProps {
   icon?: IconType;
@@ -12,7 +12,7 @@ interface BadgeIndicatorProps extends BadgeProps {
   count: number;
 }
 
-export const BadgeIndicator: React.FC<BadgeIndicatorProps> = ({
+const BadgeIndicator: React.FC<BadgeIndicatorProps> = ({
   icon,
   label,
   count,
