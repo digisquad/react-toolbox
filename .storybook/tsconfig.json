@@ -2,7 +2,10 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
-    "outDir": ""
+    "outDir": "",
+    "paths": {
+      "@react-toolbox/shared*": ["../shared/ui/src*"]
+    }
   },
   "files": [
     "../node_modules/@nrwl/react/typings/styled-jsx.d.ts",
