@@ -4,8 +4,7 @@ import { Button } from '@chakra-ui/button';
 import { Wrap } from '@chakra-ui/layout';
 import { FaUnlock } from 'react-icons/fa';
 import { FiPrinter } from 'react-icons/fi';
-
-import { BadgeIndicator } from '.';
+import BadgeIndicator from '.';
 
 export default {
   title: 'Components/BadgeIndicator',
@@ -24,7 +23,12 @@ export const WithCustomColorScheme = () => (
   <Wrap spacing={2}>
     <BadgeIndicator label="Badge" count={1} colorScheme="brand" />
     <BadgeIndicator icon={FaUnlock} label="Badge" count={1} colorScheme="red" />
-    <BadgeIndicator icon={FaUnlock} label="Badge" count={1} colorScheme="green" />
+    <BadgeIndicator
+      icon={FaUnlock}
+      label="Badge"
+      count={1}
+      colorScheme="green"
+    />
   </Wrap>
 );
 
@@ -40,7 +44,10 @@ export const ImpressionsCase = () => {
         count={count}
         colorScheme={isError ? 'error' : 'brandSecondary'}
       />
-      <Button onClick={() => setCount((value) => (value === 0 ? 1 : 0))} size="xs">
+      <Button
+        onClick={() => setCount((value) => (value === 0 ? 1 : 0))}
+        size="xs"
+      >
         Toggle count
       </Button>
       {count > 0 && (
