@@ -34,15 +34,15 @@ const BadgeIndicator: React.FC<BadgeIndicatorProps> = ({
           <Icon icon={icon} fontSize="md" />
         </Maybe>
         <Maybe condition={label} >
-          [
           <Text key="text" fontSize="xs" fontWeight="bold" px="1">
             {label}
           </Text>,
           <Divider key="divider" orientation="vertical" w={1} h="0.7rem" borderColor={`${colorScheme ?? colorCurrent}.300`} />
-          ]
         </Maybe>
         <Text fontSize="xs">{count && !Number.isNaN(count) ? count : '-'}</Text>
       </Stack>
     </Badge>
   );
 };
+
+export default BadgeIndicator
