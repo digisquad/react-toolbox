@@ -1,6 +1,7 @@
 import {
   Box,
   Heading,
+  Container,
   Text,
   Stack,
   Button,
@@ -12,17 +13,51 @@ import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 const Main = () => {
   return (
     <Box p={8}>
-      <Heading as="h1" size="xl" mb={4}>
-        React Toolbox
-      </Heading>
-      <Text fontSize="lg" mb={6}>
-        React Toolbox is a cutting-edge web project starter template designed to
-        provide a highly scalable architecture for launching your digital
-        product. By adopting this template, you can kickstart your development
-        process in a clean and efficient manner, enabling rapid product
-        development. Experience the seamless developer journey and deliver
-        exceptional user experiences with ease.
-      </Text>
+      <Container maxW={'3xl'}>
+        <Stack
+          as={Box}
+          textAlign={'center'}
+          spacing={{ base: 8, md: 14 }}
+          py={{ base: 20, md: 36 }}
+        >
+          <Heading
+            fontWeight={600}
+            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+            lineHeight={'110%'}
+          >
+            React toolbox
+            <br />
+            <Text as={'span'} color="#0582d2">
+              cutting-edge web template
+            </Text>
+          </Heading>
+          <Text color={'gray.500'}>
+            React toolbox is a cutting-edge web project starter template
+            designed to provide a highly scalable architecture for launching
+            your digital product. By adopting this template, you can kickstart
+            your development process in a clean and efficient manner, enabling
+            rapid product development. Experience the seamless developer journey
+            and deliver exceptional user experiences with ease.
+          </Text>
+          <Stack
+            direction={'column'}
+            spacing={3}
+            align={'center'}
+            alignSelf={'center'}
+            position={'relative'}
+          >
+            <Button
+              variant="@primary"
+              leftIcon={<FaGithub />}
+              bg="#0582d2"
+              rounded={'full'}
+              px={6}
+            >
+              View on github
+            </Button>
+          </Stack>
+        </Stack>
+      </Container>
       <VStack spacing={4} align="start" mb={8}>
         <Stack direction="row" align="center" spacing={2}>
           <Heading as="h2" size="md">
