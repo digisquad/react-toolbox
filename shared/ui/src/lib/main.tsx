@@ -13,7 +13,7 @@ import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 const Main = () => {
   return (
-    <Box background-color="#F9F9F9">
+    <Box backgroundColor="#F9F9F9">
       <Container maxW={'3xl'}>
         <Stack
           as={Box}
