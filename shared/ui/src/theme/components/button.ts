@@ -1,140 +1,119 @@
-import { Color, Scheme } from '@theme/types/css';
-import { GlobalStyleProps } from '@chakra-ui/theme-tools';
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
+import { transparentize } from '@chakra-ui/theme-tools';
 
-interface CustomVariant {
-  bg: Color
-  bgHover?: Color
-  bgActive?: Color
-  color: Color
-  colorHover?: Color
-  boxShadowFocus?: string
-  borderColor?: string
-}
-const customVariant = ({
-  bg,
-  bgHover = bg,
-  bgActive = bgHover,
-  color,
-  colorHover = color,
-  boxShadowFocus = 'outline',
-  borderColor = 'transparent',
-}: CustomVariant) => {
-  return {
-    bg,
-    color,
-    borderColor,
-    _focus: {
-      boxShadow: boxShadowFocus,
+const variantPrimary = defineStyle((props) => ({
+  bg: `${props.colorScheme}.600`,
+  color: 'white',
+  _hover: {
+    bg: `${props.colorScheme}.700`,
+    color: 'white',
+    _disabled: {
+      bg: `${props.colorScheme}.600`,
+      color: 'white',
     },
+  },
+  _active: { bg: `${props.colorScheme}.800` },
+  _focusVisible: {
+    ringColor: `${props.colorScheme}.500`,
+  },
+
+  _dark: {
+    bg: `${props.colorScheme}.300`,
+    color: `${props.colorScheme}.900`,
     _hover: {
-      bg: bgHover,
-      color: colorHover,
+      bg: `${props.colorScheme}.400`,
+      color: `${props.colorScheme}.900`,
       _disabled: {
-        bg,
+        bg: `${props.colorScheme}.300`,
+        color: `${props.colorScheme}.900`,
       },
     },
-    _active: { bg: bgActive },
-  };
-};
-
-export default {
-  baseStyle: {
-    border: '1px solid',
-    borderColor: 'transparent',
+    _active: {
+      bg: `${props.colorScheme}.500`,
+    },
   },
+}));
+
+const variantSecondary = defineStyle((props) => ({
+  bg: 'white',
+  color: `${props.colorScheme}.600`,
+  border: '1px solid',
+  borderColor: 'gray.200',
+  _hover: {
+    bg: `${props.colorScheme}.50`,
+    borderColor: `${props.colorScheme}.200`,
+    _disabled: {
+      bg: 'white',
+      borderColor: 'gray.200',
+    },
+  },
+  _active: {
+    bg: `${props.colorScheme}.100`,
+  },
+  _focusVisible: {
+    ringColor: `${props.colorScheme}.500`,
+  },
+
+  _dark: {
+    bg: 'gray.800',
+    color: props.colorScheme === 'gray' ? 'white' : `${props.colorScheme}.400`,
+    borderColor: 'gray.700',
+    _hover: {
+      bg: 'gray.900',
+      borderColor: `${props.colorScheme}.700`,
+      _disabled: {
+        bg: 'gray.800',
+        borderColor: 'gray.700',
+      },
+    },
+    _active: {
+      bg: 'gray.800',
+    },
+  },
+}));
+
+export default defineStyleConfig({
+  baseStyle: (props) => ({
+    _focusVisible: {
+      boxShadow: 'none',
+      ring: '2px',
+      ringOffset: '2px',
+      ringColor: `${props.colorScheme}.500`,
+    },
+    // Disabled Style
+    ...(props.isDisabled
+      ? {
+        _disabled: {
+          opacity: 0.8,
+          border: '1px solid!',
+          bg: 'blackAlpha.50!',
+          borderColor: 'blackAlpha.50!',
+          color: 'blackAlpha.300!',
+          _dark: {
+            opacity: 1,
+            bg: 'whiteAlpha.50!',
+            borderColor: 'whiteAlpha.50!',
+            color: 'whiteAlpha.300!',
+          },
+        },
+      }
+      : { _disabled: {} }),
+  }),
   variants: {
     // Custom variants
-    '@primary': customVariant({
-      bg: 'accent.600',
-      bgHover: 'accent.700',
-      bgActive: 'accent.800',
-      color: 'white',
-      boxShadowFocus: 'outline-accent',
-    }),
-    '@secondary': customVariant({
-      bg: 'brand.50',
-      bgHover: 'brand.100',
-      bgActive: 'brand.200',
-      color: 'brand.600',
-      colorHover: 'brand.700',
-      boxShadowFocus: 'outline-brand',
-    }),
-    '@danger': customVariant({
-      bg: 'error.50',
-      bgHover: 'error.100',
-      bgActive: 'error.200',
-      color: 'error.600',
-      colorHover: 'error.700',
-      boxShadowFocus: 'outline-error',
-    }),
-    '@warning': customVariant({
-      bg: 'warning.50',
-      bgHover: 'warning.100',
-      bgActive: 'warning.200',
-      color: 'warning.700',
-      colorHover: 'warning.800',
-      boxShadowFocus: 'outline-warning',
-    }),
-    '@white': customVariant({
-      bg: 'white',
-      bgHover: 'brand.100',
-      bgActive: 'brand.200',
-      color: 'brand.600',
-      colorHover: 'brand.700',
-      boxShadowFocus: 'outline-brand',
-      borderColor: 'gray.200',
-    }),
-    '@whiteNeutral': customVariant({
-      bg: '#111',
-      bgHover: 'gray.200',
-      bgActive: 'gray.300',
-      color: 'gray.600',
-      colorHover: 'gray.700',
-      boxShadowFocus: 'outline-gray',
-      borderColor: 'gray.200',
-    }),
-    '@accentLink': customVariant({
-      bg: 'transparent',
-      color: 'gray.600',
-      colorHover: 'brand.700',
-    }),
-    '@bordered': ({ colorScheme }: GlobalStyleProps) =>
-      customVariant({
-        bg: `${colorScheme as Scheme}.100`,
-        bgHover: `${colorScheme as Scheme}.200`,
-        color: `${colorScheme as Scheme}.700`,
-        colorHover: `${colorScheme as Scheme}.800`,
-        borderColor: `${colorScheme as Scheme}.200`,
-      }),
-
+    '@primary': (props) => variantPrimary({ ...props, colorScheme: 'brand' }),
+    '@secondary': (props) =>
+      variantSecondary({ ...props, colorScheme: 'brand' }),
+    '@danger': (props) => variantSecondary({ ...props, colorScheme: 'error' }),
     // Default variants
-    solid: ({ colorScheme }: GlobalStyleProps) => ({
-      bg: colorScheme === 'gray' ? `${colorScheme}.100` : `${colorScheme}.600`,
+    solid: (props) =>
+      props.colorScheme === 'gray' ? variantSecondary(props) : {},
+    outline: variantSecondary,
+    ghost: (props) => ({
+      bg: transparentize(`${props.colorScheme}.500`, 0.05)(props.theme),
       _hover: {
-        bg: colorScheme === 'gray' ? `${colorScheme}.200` : `${colorScheme}.700`,
-      },
-    }),
-    ghost: ({ colorScheme }: GlobalStyleProps) => ({
-      bg: `${colorScheme}.50`,
-      _hover: {
-        bg: `${colorScheme}.100`,
-        _disabled: {
-          bg: `${colorScheme}.50`,
-        },
-      },
-    }),
-    link: ({ colorScheme = 'gray' }: GlobalStyleProps) => ({
-      color: `${colorScheme}.500`,
-      border: 'none',
-      lineHeight: 'lg',
-      textDecoration: 'underline',
-      _hover: {
-        textDecoration: 'none',
-      },
-      _focus: {
-        textDecoration: 'none',
-        boxShadow: `outline-${colorScheme}`,
+        bg: transparentize(`${props.colorScheme}.500`, 0.15)(props.theme),
       },
     }),
   },
-};
+});
