@@ -7,12 +7,13 @@ import {
   Button,
   Link,
   VStack,
+  Image,
 } from '@chakra-ui/react';
 import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 const Main = () => {
   return (
-    <Box p={8}>
+    <Box background-color="#F9F9F9">
       <Container maxW={'3xl'}>
         <Stack
           as={Box}
@@ -25,8 +26,7 @@ const Main = () => {
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}
           >
-            React toolbox
-            <br />
+            <Image src="/react-toolbox.png" />
             <Text as={'span'} color="#0582d2">
               cutting-edge web template
             </Text>
@@ -47,10 +47,9 @@ const Main = () => {
             position={'relative'}
           >
             <Button
-              variant="@primary"
               leftIcon={<FaGithub />}
-              bg="#0582d2"
-              rounded={'full'}
+              _hover={{ bg: '#010409', color: '#dee5ed' }}
+              rounded="full"
               px={6}
             >
               View on github
