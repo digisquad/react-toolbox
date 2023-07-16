@@ -1,6 +1,13 @@
-import { Box, Button, useColorModeValue } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Image,
+  Heading,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 interface CardProps {
+  image: string;
   title: string;
   content: string;
   buttonText: string;
@@ -8,11 +15,13 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({
+  image,
   title,
   content,
   buttonText,
   onButtonClick,
 }) => {
+  console.log(image);
   return (
     <Box
       bg={useColorModeValue('white', 'gray.800')}
@@ -25,13 +34,22 @@ const Card: React.FC<CardProps> = ({
       margin="auto"
       textAlign="center"
     >
-      <Box as="h2" fontWeight="bold" fontSize="xl" mb="4">
+      <Image roundedTop="lg" w="full" fit="cover" src={image} />
+      <Heading as="h2" fontWeight="bold" fontSize="xl" mb="4">
         {title}
-      </Box>
+      </Heading>
       <Box>{content}</Box>
-      <Button variant="@primary" mt="4" borderRadius="full" width="100%" onClick={onButtonClick}>
-        {buttonText}
-      </Button>
+      {buttonText && (
+        <Button
+          variant="@primary"
+          mt="4"
+          borderRadius="full"
+          width="100%"
+          onClick={onButtonClick}
+        >
+          {buttonText}
+        </Button>
+      )}
     </Box>
   );
 };

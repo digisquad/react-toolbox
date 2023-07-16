@@ -8,25 +8,31 @@ import {
   Link,
   VStack,
   Image,
+  Grid,
+  GridItem,
 } from '@chakra-ui/react';
 import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
-
+import Card from '@/lib/card';
 const Main = () => {
   return (
-    <Box backgroundColor="#F9F9F9">
+    <Box
+      backgroundColor="#F9F9F9"
+      backgroundImage="/background.jpg"
+      backgroundRepeat="no-repeat"
+    >
       <Container maxW={'3xl'}>
         <Stack
           as={Box}
           textAlign={'center'}
-          spacing={{ base: 8, md: 14 }}
+          spacing={{ base: 8, md: 12 }}
           py={{ base: 20, md: 36 }}
         >
           <Heading
             fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+            fontSize={{ base: '3xl', sm: '3xl', md: '5xl' }}
             lineHeight={'110%'}
           >
-            <Image src="/react-toolbox.png" />
+            <Image src="/react-toolbox.png" margin="0 auto" />
             <Text as={'span'} color="#0582d2">
               cutting-edge web template
             </Text>
@@ -34,46 +40,67 @@ const Main = () => {
           <Text color={'gray.500'}>
             React toolbox is a cutting-edge web project starter template
             designed to provide a highly scalable architecture for launching
-            your digital product. By adopting this template, you can kickstart
-            your development process in a clean and efficient manner, enabling
-            rapid product development. Experience the seamless developer journey
-            and deliver exceptional user experiences with ease.
+            your digital product. Experience the seamless developer journey and
+            deliver exceptional user experiences with ease.
           </Text>
           <Stack
             direction={'column'}
-            spacing={3}
             align={'center'}
             alignSelf={'center'}
             position={'relative'}
           >
-            <Button
-              leftIcon={<FaGithub />}
-              _hover={{ bg: '#010409', color: '#dee5ed' }}
-              rounded="full"
-              px={6}
-            >
-              View on github
-            </Button>
+            <Link href="https://github.com/digisquad/react-toolbox">
+              <Button
+                leftIcon={<FaGithub />}
+                _hover={{ bg: '#010409', color: '#dee5ed' }}
+                rounded="full"
+                px={6}
+              >
+                View on github
+              </Button>
+            </Link>
           </Stack>
         </Stack>
       </Container>
-      <VStack spacing={4} align="start" mb={8}>
+      <VStack spacing={4} align="center" mb={8}>
         <Stack direction="row" align="center" spacing={2}>
-          <Heading as="h2" size="md">
-            Main Features:
+          <Heading as="h1">
+            <Text as={'span'} color="#0582d2">
+              Main Features
+            </Text>
           </Heading>
         </Stack>
-        <Box borderWidth="1px" borderRadius="md" p={4}>
-          <Text>
-            Parametrable design system code that follows rules regarding UX
-          </Text>
-        </Box>
-        <Box borderWidth="1px" borderRadius="md" p={4}>
-          <Text>Advanced reusable components to speed up development</Text>
-        </Box>
-        <Box borderWidth="1px" borderRadius="md" p={4}>
-          <Text>UI library that contains your front-end needs</Text>
-        </Box>
+        <Grid
+          templateColumns={{
+            base: 'repeat(1, 1fr)',
+            sm: 'repeat(1, 1fr)',
+            md: 'repeat(1, 1fr)',
+            lg: 'repeat(3, 1fr)',
+          }}
+          gap={6}
+        >
+          <GridItem>
+            <Card
+              image="illustrations/parametrable.svg"
+              title="Parametrable"
+              content="Parametrable design system code that follows rules regarding UX"
+            />
+          </GridItem>
+          <GridItem>
+            <Card
+              image="illustrations/flexible.svg"
+              title="Flexibility"
+              content="Advanced reusable components to speed up development"
+            />
+          </GridItem>
+          <GridItem>
+            <Card
+              image="illustrations/fast.svg"
+              title="Efficient"
+              content="UI library that contains your front-end needs"
+            />
+          </GridItem>
+        </Grid>
       </VStack>
       <Box p={8}>
         {/* ... */}
@@ -122,7 +149,7 @@ const Main = () => {
         Developed by Digital Squad
       </Text>
       <Stack direction="row" spacing={4}>
-        <Link href="https://github.com/digitalsquad" isExternal>
+        <Link href="https://github.com/digisquad" isExternal>
           <Button leftIcon={<FaGithub />} colorScheme="gray" variant="solid">
             GitHub
           </Button>
