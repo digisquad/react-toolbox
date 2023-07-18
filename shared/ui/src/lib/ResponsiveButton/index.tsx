@@ -16,7 +16,7 @@ interface ResponsiveButtonProps extends ButtonProps {
   to?: string;
 }
 
-export const ResponsiveButton: React.FC<ResponsiveButtonProps> = ({
+const ResponsiveButton: React.FC<ResponsiveButtonProps> = ({
   hideTextBreakpoints = {
     base: true,
     md: false,
@@ -31,8 +31,12 @@ export const ResponsiveButton: React.FC<ResponsiveButtonProps> = ({
   return responsiveStates ? (
     <IconButton aria-label={children} icon={icon} {...rest} />
   ) : (
-    <Button {...(iconPosition === 'right' ? { rightIcon: icon } : { leftIcon: icon })} {...rest}>
+    <Button
+      {...(iconPosition === 'right' ? { rightIcon: icon } : { leftIcon: icon })}
+      {...rest}
+    >
       {children}
     </Button>
   );
 };
+export default ResponsiveButton;
