@@ -63,7 +63,7 @@ const Main = () => {
         </Stack>
       </Container>
       <VStack spacing={4} align="center" mb={8}>
-        <Stack direction="row" align="center" spacing={2}>
+        <Stack direction="row" align="center" spacing={2} pb={16}>
           <Heading as="h1">
             <Text as={'span'} color="#0582d2">
               Main Features

@@ -35,10 +35,12 @@ const Card: React.FC<CardProps> = ({
       textAlign="center"
     >
       <Image roundedTop="lg" w="full" fit="cover" src={image} />
-      <Heading as="h2" fontWeight="bold" fontSize="xl" mb="4">
+      <Heading as="h2" fontWeight="bold" fontSize="xl" mb="4" color="brand.900">
         {title}
       </Heading>
-      <Box>{content}</Box>
+      <Box color="#333333" paddingBottom="1em">
+        {content}
+      </Box>
       {buttonText && (
         <Button
           variant="@primary"
