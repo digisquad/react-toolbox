@@ -8,139 +8,204 @@ import {
   Link,
   VStack,
   Image,
+  Grid,
+  GridItem,
+  Flex,
+  Icon as ChakraIcon,
 } from '@chakra-ui/react';
+import { SiReact, SiVite, SiStorybook } from 'react-icons/si';
 import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import Card from '@/lib/card';
+import ResponsiveButton from '@/lib/ResponsiveButton';
 
 const Main = () => {
   return (
-    <Box backgroundColor="#F9F9F9">
+    <Box
+      backgroundColor="#f7fafc"
+      backgroundImage="/background.jpg"
+      backgroundRepeat="no-repeat"
+    >
       <Container maxW={'3xl'}>
         <Stack
           as={Box}
           textAlign={'center'}
-          spacing={{ base: 8, md: 14 }}
+          spacing={{ base: 8, md: 12 }}
           py={{ base: 20, md: 36 }}
         >
           <Heading
             fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+            fontSize={{ base: '3xl', sm: '3xl', md: '5xl' }}
             lineHeight={'110%'}
           >
-            <Image src="/react-toolbox.png" />
+            <Image src="/react-toolbox.png" margin="0 auto" />
             <Text as={'span'} color="#0582d2">
               cutting-edge web template
             </Text>
           </Heading>
-          <Text color={'gray.500'}>
+          <Text>
             React toolbox is a cutting-edge web project starter template
             designed to provide a highly scalable architecture for launching
-            your digital product. By adopting this template, you can kickstart
-            your development process in a clean and efficient manner, enabling
-            rapid product development. Experience the seamless developer journey
-            and deliver exceptional user experiences with ease.
+            your digital product. Experience the seamless developer journey and
+            deliver exceptional user experiences with ease.
           </Text>
           <Stack
             direction={'column'}
-            spacing={3}
             align={'center'}
             alignSelf={'center'}
             position={'relative'}
           >
-            <Button
-              leftIcon={<FaGithub />}
-              _hover={{ bg: '#010409', color: '#dee5ed' }}
-              rounded="full"
-              px={6}
-            >
-              View on github
-            </Button>
+            <Link href="https://github.com/digisquad/react-toolbox">
+              <Button
+                leftIcon={<FaGithub />}
+                _hover={{ bg: '#010409', color: '#dee5ed' }}
+                rounded="full"
+                px={6}
+              >
+                View on github
+              </Button>
+            </Link>
           </Stack>
         </Stack>
       </Container>
-      <VStack spacing={4} align="start" mb={8}>
-        <Stack direction="row" align="center" spacing={2}>
-          <Heading as="h2" size="md">
-            Main Features:
+      <VStack spacing={4} align="center" mb={8}>
+        <Stack direction="row" align="center" spacing={2} pb={16}>
+          <Heading as="h1">
+            <Text as={'span'} color="#0582d2">
+              Main Features
+            </Text>
           </Heading>
         </Stack>
-        <Box borderWidth="1px" borderRadius="md" p={4}>
-          <Text>
-            Parametrable design system code that follows rules regarding UX
-          </Text>
-        </Box>
-        <Box borderWidth="1px" borderRadius="md" p={4}>
-          <Text>Advanced reusable components to speed up development</Text>
-        </Box>
-        <Box borderWidth="1px" borderRadius="md" p={4}>
-          <Text>UI library that contains your front-end needs</Text>
-        </Box>
+        <Grid
+          templateColumns={{
+            base: 'repeat(1, 1fr)',
+            sm: 'repeat(1, 1fr)',
+            md: 'repeat(1, 1fr)',
+            lg: 'repeat(3, 1fr)',
+          }}
+          gap={6}
+        >
+          <GridItem>
+            <Card
+              image="illustrations/parametrable.svg"
+              title="Parametrable"
+              content="Parametrable design system code that follows rules regarding UX"
+            />
+          </GridItem>
+          <GridItem>
+            <Card
+              image="illustrations/flexible.svg"
+              title="Flexibility"
+              content="Advanced reusable components to speed up development"
+            />
+          </GridItem>
+          <GridItem>
+            <Card
+              image="illustrations/fast.svg"
+              title="Efficient"
+              content="UI library that contains your front-end needs"
+            />
+          </GridItem>
+        </Grid>
       </VStack>
       <Box p={8}>
         {/* ... */}
-        <VStack spacing={4} align="start" mb={8}>
-          <Stack direction="row" align="center" spacing={2}>
-            <Heading as="h2" size="md">
-              Technologies:
+        <VStack spacing={4} mb={8}>
+          <Stack direction="row" align="center" spacing={2} pb={16}>
+            <Heading as="h1">
+              <Text as={'span'} color="#0582d2">
+                Technology choices
+              </Text>
             </Heading>
           </Stack>
-          <Box borderWidth="1px" borderRadius="md" p={4}>
-            <Heading as="h3" size="sm" mb={2}>
-              ReactJS
-            </Heading>
-            <Text>
-              ReactJS is a popular JavaScript library for building user
-              interfaces. It provides a component-based architecture and a
-              virtual DOM, making it efficient and easy to develop interactive
-              web applications.
-            </Text>
-          </Box>
-          {/* Add descriptions for other technologies */}
-          <Box borderWidth="1px" borderRadius="md" p={4}>
-            <Heading as="h3" size="sm" mb={2}>
-              Nx
-            </Heading>
-            <Text>
-              Nx is a powerful extensible dev toolset for monorepo development.
-              It provides a set of CLI tools and plugins to enhance productivity
-              and maintainability when working with large-scale projects.
-            </Text>
-          </Box>
-          <Box borderWidth="1px" borderRadius="md" p={4}>
-            <Heading as="h3" size="sm" mb={2}>
-              Storybook
-            </Heading>
-            <Text>
-              Storybook is a development environment and UI component explorer
-              for building and documenting UI components in isolation. It allows
-              you to develop and test components independently, ensuring
-              reusability and consistency across your application.
-            </Text>
-          </Box>
+          <Flex gap={8} flexWrap="wrap">
+            <Box flex="1 0 20%" p={4}>
+              <Heading as="h3" size="sm" mb={2}>
+                <ChakraIcon as={SiReact} mr="2" /> ReactJS
+              </Heading>
+              <Text>
+                ReactJS is a JavaScript library for building user interfaces,
+                focusing on a declarative and component-based approach. It
+                allows developers to efficiently create interactive and dynamic
+                web applications by breaking the UI into reusable components.
+                React's virtual DOM efficiently updates the actual DOM, making
+                UI updates faster and more efficient. Its popularity and vast
+                ecosystem make it the go-to choice for front-end development.
+              </Text>
+            </Box>
+            <Box flex="1 0 20%" p={4}>
+              <Heading as="h3" size="sm" mb={2}>
+                <ChakraIcon as={SiVite} mr={2} /> Vite
+              </Heading>
+              <Text>
+                Vite is a build tool and development server designed for modern
+                JavaScript applications. It offers blazing fast development and
+                build times by utilizing native ES modules and leveraging the
+                browser's native import capabilities. Vite's development server
+                uses native ES modules to serve JavaScript, which accelerates
+                hot module replacement and refreshes. It's a great choice for
+                building performant and modern web applications.
+              </Text>
+            </Box>
+            <Box flex="1 0 20%" p={4}>
+              <Heading as="h3" size="sm" mb={2}>
+                <ChakraIcon as={SiStorybook} mr={2} /> Storybook
+              </Heading>
+              <Text>
+                Storybook is a development environment for UI components. It
+                allows you to isolate, develop, and test individual components
+                in isolation, providing a visual testing and documentation
+                platform. Storybook helps teams collaborate better and maintain
+                a library of reusable components across projects. It's widely
+                used in component-driven development to streamline the UI
+                development process.
+              </Text>
+            </Box>
+          </Flex>
         </VStack>
       </Box>
-      <Text fontSize="lg" mb={4}>
-        Developed by Digital Squad
-      </Text>
-      <Stack direction="row" spacing={4}>
-        <Link href="https://github.com/digitalsquad" isExternal>
-          <Button leftIcon={<FaGithub />} colorScheme="gray" variant="solid">
-            GitHub
-          </Button>
-        </Link>
-        <Link
-          href="https://www.linkedin.com/company/digital-squad-ma"
-          isExternal
+      <Box textAlign="center" bgColor="gray.800" padding={8}>
+        <Text fontSize="md" mb={4} color="white">
+         Made with love by Digital squad
+        </Text>
+        <Flex
+          direction="row"
+          spacing={4}
+          alignItems="center"
+          justifyContent="center"
+          gap={2}
         >
-          <Button leftIcon={<FaLinkedin />} colorScheme="blue" variant="solid">
-            LinkedIn
-          </Button>
-        </Link>
-        <Link href="https://www.youtube.com/@SAYKOUKtv" isExternal>
-          <Button leftIcon={<FaYoutube />} colorScheme="red" variant="solid">
-            YouTube
-          </Button>
-        </Link>
-      </Stack>
+          <Link href="https://github.com/digisquad" isExternal>
+            <ResponsiveButton
+              leftIcon={<FaGithub />}
+              colorScheme="gray"
+              variant="solid"
+            >
+              GitHub
+            </ResponsiveButton>
+          </Link>
+          <Link
+            href="https://www.linkedin.com/company/digital-squad-ma"
+            isExternal
+          >
+            <ResponsiveButton
+              leftIcon={<FaLinkedin />}
+              colorScheme="blue"
+              variant="solid"
+            >
+              LinkedIn
+            </ResponsiveButton>
+          </Link>
+          <Link href="https://www.youtube.com/@SAYKOUKtv" isExternal>
+            <ResponsiveButton
+              leftIcon={<FaYoutube />}
+              colorScheme="red"
+              variant="solid"
+            >
+              YouTube
+            </ResponsiveButton>
+          </Link>
+        </Flex>
+      </Box>
     </Box>
   );
 };
