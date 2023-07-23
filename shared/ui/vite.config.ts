@@ -7,11 +7,7 @@ import { join } from 'path';
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/shared-ui',
-  build: {
-    rollupOptions: {
-      external: ['@/lib/card'], // Add other external dependencies as needed
-    },
-  },
+
   plugins: [
     dts({
       entryRoot: 'src',
