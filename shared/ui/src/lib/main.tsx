@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { SiReact, SiVite, SiStorybook } from 'react-icons/si';
 import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
-import Card from '@/lib/card';
+import Card from '@/lib/Card';
 import ResponsiveButton from '@/lib/ResponsiveButton';
 
 const Main = () => {
