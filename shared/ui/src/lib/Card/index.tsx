@@ -6,12 +6,12 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-interface CardProps {
+export interface CardProps {
   image: string;
   title: string;
   content: string;
   buttonText: string;
-  onButtonClick: () => void;
+  onButtonClick?: () => void;
 }
 
 const Card: React.FC<CardProps> = ({

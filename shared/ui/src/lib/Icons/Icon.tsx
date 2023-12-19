@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
 
-import { Box, BoxProps, Icon as ChakraIcon, IconProps as ChakraIconProps, forwardRef } from '@chakra-ui/react';
+import { Box, BoxProps, Icon as ChakraIcon, IconProps as ChakraIconProps, forwardRef, As } from '@chakra-ui/react';
+
 
 export interface IconProps extends BoxProps {
-  icon: FC;
-  iconProps?: ChakraIconProps;
+  icon?: As
+  iconProps?: ChakraIconProps ;
   withNotifications?: boolean;
   notificationsColor?: string;
 }

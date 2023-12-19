@@ -2,10 +2,12 @@ import React, { FC, createContext } from 'react';
 
 import { Stack, StackProps } from '@chakra-ui/react';
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 export const ProgressContext = createContext<ProgressPropsType>(null);
 
 export interface ProgressPropsType {
-  completed?: number;
+  completed: number;
   total?: number;
 }
 

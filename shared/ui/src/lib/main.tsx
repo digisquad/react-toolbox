@@ -32,7 +32,7 @@ const Main = () => {
           spacing={{ base: 8, md: 12 }}
           py={{ base: 20, md: 36 }}
         >
-          <SectionHeading color="#0582d2">
+          <SectionHeading htmlComponent="h1" color="#0582d2">
             <Image src="/react-toolbox.png" margin="0 auto" />
             cutting-edge web template
           </SectionHeading>
@@ -63,7 +63,7 @@ const Main = () => {
       </Container>
       <VStack spacing={4} align="center" mb={8}>
         <Stack direction="row" align="center" spacing={2} pb={16}>
-          <SectionHeading color="#0582d2">Main Features</SectionHeading>
+          <SectionHeading htmlComponent="h2" color="#0582d2">Main Features</SectionHeading>
         </Stack>
         <Grid
           templateColumns={{
@@ -79,6 +79,7 @@ const Main = () => {
               image="illustrations/parametrable.svg"
               title="Parametrable"
               content="Parametrable design system code that follows rules regarding UX"
+              buttonText="Learn More"
             />
           </GridItem>
           <GridItem>
@@ -86,6 +87,7 @@ const Main = () => {
               image="illustrations/flexible.svg"
               title="Flexibility"
               content="Advanced reusable components to speed up development"
+              buttonText="Learn More"
             />
           </GridItem>
           <GridItem>
@@ -93,6 +95,7 @@ const Main = () => {
               image="illustrations/fast.svg"
               title="Efficient"
               content="UI library that contains your front-end needs"
+              buttonText="Learn More"
             />
           </GridItem>
         </Grid>
@@ -101,9 +104,9 @@ const Main = () => {
         {/* ... */}
         <VStack spacing={4} mb={8}>
           <Stack direction="row" align="center" spacing={2} pb={16}>
-            <SectionHeading color="#0582d2">Technology choices</SectionHeading>
+            <SectionHeading htmlComponent="h2" color="#0582d2">Technology choices</SectionHeading>
           </Stack>
-          <Flex gap={8} flexWrap="wrap">
+          <Flex flexWrap="wrap">
             <Paragraph
               icon={SiReact}
               title="ReactJS"
@@ -127,11 +130,8 @@ const Main = () => {
           Made with love by Digital squad
         </Text>
         <Flex
-          direction="row"
-          spacing={4}
           alignItems="center"
           justifyContent="center"
-          gap={2}
         >
           <Link href="https://github.com/digisquad" isExternal>
             <ResponsiveButton
@@ -172,4 +172,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Main

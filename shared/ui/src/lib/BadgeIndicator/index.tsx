@@ -13,12 +13,12 @@ interface BadgeIndicatorProps extends BadgeProps {
 }
 
 const BadgeIndicator: React.FC<BadgeIndicatorProps> = ({
-  icon,
-  label,
-  count,
-  colorScheme = 'brandSecondary',
-  ...rest
-}) => {
+                                                         icon,
+                                                         label,
+                                                         count,
+                                                         colorScheme = 'brandSecondary',
+                                                         ...rest
+                                                       }) => {
   const isDisabled = count <= 0;
   const colorCurrent = isDisabled ? 'gray' : colorScheme;
 
@@ -30,14 +30,16 @@ const BadgeIndicator: React.FC<BadgeIndicatorProps> = ({
       {...rest}
     >
       <Stack direction="row" alignItems="center" spacing={1} py={icon ? undefined : '0.2rem'}>
-        <Maybe condition={icon} >
+        <Maybe condition={icon !== undefined} >
           <Icon icon={icon} fontSize="md" />
         </Maybe>
-        <Maybe condition={label} >
-          <Text key="text" fontSize="xs" fontWeight="bold" px="1">
-            {label}
-          </Text>,
-          <Divider key="divider" orientation="vertical" w={1} h="0.7rem" borderColor={`${colorScheme ?? colorCurrent}.300`} />
+        <Maybe condition={!!label} >
+          <React.Fragment>
+            <Text key="text" fontSize="xs" fontWeight="bold" px="1">
+              {label}
+            </Text>
+            <Divider key="divider" orientation="vertical" w={1} h="0.7rem" borderColor={`${colorScheme ?? colorCurrent}.300`} />
+          </React.Fragment>
         </Maybe>
         <Text fontSize="xs">{count && !Number.isNaN(count) ? count : '-'}</Text>
       </Stack>

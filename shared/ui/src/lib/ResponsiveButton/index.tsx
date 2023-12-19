@@ -11,21 +11,21 @@ interface BreakpointsProps {
 interface ResponsiveButtonProps extends ButtonProps {
   hideTextBreakpoints?: BreakpointsProps;
   icon: React.ReactElement;
-  children?: string;
+  children: string;
   iconPosition?: 'left' | 'right';
   to?: string;
 }
 
 const ResponsiveButton: React.FC<ResponsiveButtonProps> = ({
-  hideTextBreakpoints = {
-    base: true,
-    md: false,
-  },
-  children,
-  icon,
-  iconPosition = 'left',
-  ...rest
-}) => {
+                                                             hideTextBreakpoints = {
+                                                               base: true,
+                                                               md: false,
+                                                             },
+                                                             children,
+                                                             icon,
+                                                             iconPosition = 'left',
+                                                             ...rest
+                                                           }) => {
   const responsiveStates = useBreakpointValue(hideTextBreakpoints);
 
   return responsiveStates ? (

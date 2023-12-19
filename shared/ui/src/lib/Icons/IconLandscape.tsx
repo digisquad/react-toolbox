@@ -1,4 +1,5 @@
 import React from 'react';
+import { ComponentProps } from 'react';
 
 import { createIcon } from '@chakra-ui/react';
 
@@ -25,6 +26,8 @@ const SvgIcon = createIcon({
   ),
 });
 
-export const IconLandscape = (props) => {
+export const IconLandscape = (props: ComponentProps<typeof Icon>) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return <Icon icon={SvgIcon} {...props} />;
 };

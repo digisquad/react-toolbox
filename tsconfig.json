@@ -8,7 +8,9 @@
     "types": ["vite/client", "vitest"],
     "baseUrl": ".",
     "paths": {
-      "@*": ["src/*"]
+      "@*": ["src/*"],
+      "@react-toolbox/shared*": ["shared/ui/src/*"],
+      "@react-toolbox/shared/ui": ["shared/ui/src/index.ts"]
     }
   },
   "files": [],

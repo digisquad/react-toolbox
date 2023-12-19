@@ -1,12 +1,13 @@
-import { FC } from 'react';
-
-import { Box, BoxProps, Flex, StackProps, UseRadioGroupProps, useRadio, useRadioGroup } from '@chakra-ui/react';
+import { FC, ReactNode } from 'react';
+import { Box, BoxProps, Flex, StackProps, UseRadioGroupProps, useRadio, useRadioGroup, As } from '@chakra-ui/react';
 
 import { Icon } from '../Icons';
 
-export type RadioIconButtonProps = BoxProps
+export type RadioIconButtonProps = BoxProps & {
+  children: ReactNode & As;
+}
 
-export const RadioIconButton = ({ children, ...rest }) => {
+export const RadioIconButton: FC<RadioIconButtonProps> = ({ children, ...rest }) => {
   const { getInputProps, getCheckboxProps, htmlProps } = useRadio(rest);
 
   const input = getInputProps();
@@ -37,7 +38,7 @@ export const RadioIconButton = ({ children, ...rest }) => {
 };
 
 export interface Option {
-  icon: React.ReactNode;
+  icon: ReactNode & As;
   value: string;
 }
 

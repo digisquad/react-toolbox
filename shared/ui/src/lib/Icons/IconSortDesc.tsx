@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { createIcon } from '@chakra-ui/react';
 
-import { Icon } from './Icon';
+import { Icon, IconProps } from './Icon';
 
 const SvgIcon = createIcon({
   displayName: 'SortDesc',
@@ -23,6 +23,8 @@ const SvgIcon = createIcon({
   ),
 });
 
-export const IconSortDesc = (props) => {
+export const IconSortDesc: FC<IconProps> = (props) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return <Icon icon={SvgIcon} {...props} />;
 };
