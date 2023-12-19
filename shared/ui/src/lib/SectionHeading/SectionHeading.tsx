@@ -4,7 +4,7 @@ import { Heading, Text } from '@chakra-ui/react';
 interface SectionHeadingProps {
   color: string;
   children: ReactNode;
-  htmlComponent: string;
+  htmlComponent: "h1" |"h2";
 }
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({
