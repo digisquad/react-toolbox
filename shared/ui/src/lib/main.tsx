@@ -135,7 +135,8 @@ const Main = () => {
         >
           <Link href="https://github.com/digisquad" isExternal>
             <ResponsiveButton
-              leftIcon={<FaGithub />}
+              icon={<FaGithub />}
+              iconPosition="left"
               colorScheme="gray"
               variant="solid"
             >
@@ -147,7 +148,8 @@ const Main = () => {
             isExternal
           >
             <ResponsiveButton
-              leftIcon={<FaLinkedin />}
+              icon={<FaLinkedin />}
+              iconPosition="left"
               colorScheme="blue"
               variant="solid"
             >
@@ -156,7 +158,8 @@ const Main = () => {
           </Link>
           <Link href="https://www.youtube.com/@SAYKOUKtv" isExternal>
             <ResponsiveButton
-              leftIcon={<FaYoutube />}
+              icon={<FaYoutube />}
+              iconPosition="left"
               colorScheme="red"
               variant="solid"
             >
