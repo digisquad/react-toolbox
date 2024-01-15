@@ -1,0 +1,112 @@
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: @babel/helper-compilation-targets@7.20.7
+npm WARN Found: @babel/core@7.20.12
+npm WARN node_modules/@babel/helper-compilation-targets/node_modules/@babel/core
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer @babel/core@"^7.0.0" from @babel/helper-compilation-targets@7.20.7
+npm WARN node_modules/@babel/helper-compilation-targets
+npm WARN   @babel/helper-compilation-targets@"^7.20.7" from @babel/core@7.20.12
+npm WARN   node_modules/@babel/helper-compilation-targets/node_modules/@babel/core
+npm WARN   7 more (@babel/core, @babel/core, @babel/core, @babel/core, ...)
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: @babel/helper-create-class-features-plugin@7.23.6
+npm WARN Found: @babel/core@7.23.6
+npm WARN node_modules/@babel/helper-create-class-features-plugin/node_modules/@babel/core
+npm WARN   peer @babel/core@"^7.0.0" from @babel/helper-module-transforms@7.23.3
+npm WARN   node_modules/@babel/helper-create-class-features-plugin/node_modules/@babel/helper-module-transforms
+npm WARN     @babel/helper-module-transforms@"^7.23.3" from @babel/core@7.23.6
+npm WARN   1 more (@babel/helper-replace-supers)
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer @babel/core@"^7.0.0" from @babel/helper-create-class-features-plugin@7.23.6
+npm WARN node_modules/@babel/helper-create-class-features-plugin
+npm WARN   @babel/helper-create-class-features-plugin@"^7.23.6" from @babel/plugin-proposal-decorators@7.23.6
+npm WARN   node_modules/@nx/js/node_modules/@babel/plugin-proposal-decorators
+npm WARN   19 more (@babel/plugin-transform-class-properties, ...)
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: @babel/helper-create-regexp-features-plugin@7.20.5
+npm WARN Found: @babel/core@7.23.6
+npm WARN node_modules/@babel/helper-create-regexp-features-plugin/node_modules/@babel/core
+npm WARN   peer @babel/core@"^7.0.0" from @babel/helper-module-transforms@7.23.3
+npm WARN   node_modules/@babel/helper-create-regexp-features-plugin/node_modules/@babel/helper-module-transforms
+npm WARN     @babel/helper-module-transforms@"^7.23.3" from @babel/core@7.23.6
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer @babel/core@"^7.0.0" from @babel/helper-create-regexp-features-plugin@7.20.5
+npm WARN node_modules/@babel/helper-create-regexp-features-plugin
+npm WARN   @babel/helper-create-regexp-features-plugin@"^7.18.6" from @babel/plugin-transform-dotall-regex@7.18.6
+npm WARN   node_modules/@babel/plugin-transform-dotall-regex
+npm WARN   5 more (@babel/plugin-syntax-unicode-sets-regex, ...)
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: @babel/plugin-transform-modules-commonjs@7.23.3
+npm WARN Found: @babel/core@7.23.6
+npm WARN node_modules/@babel/plugin-transform-modules-commonjs/node_modules/@babel/core
+npm WARN   peer @babel/core@"^7.0.0" from @babel/helper-module-transforms@7.23.3
+npm WARN   node_modules/@babel/plugin-transform-modules-commonjs/node_modules/@babel/helper-module-transforms
+npm WARN     @babel/helper-module-transforms@"^7.23.3" from @babel/plugin-transform-modules-commonjs@7.23.3
+npm WARN     node_modules/@babel/plugin-transform-modules-commonjs
+npm WARN     1 more (@babel/core)
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer @babel/core@"^7.0.0-0" from @babel/plugin-transform-modules-commonjs@7.23.3
+npm WARN node_modules/@babel/plugin-transform-modules-commonjs
+npm WARN   @babel/plugin-transform-modules-commonjs@"^7.23.3" from @babel/preset-env@7.23.6
+npm WARN   node_modules/@nx/js/node_modules/@babel/preset-env
+npm WARN   4 more (@babel/preset-typescript, @babel/preset-env, ...)
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: @babel/preset-env@7.20.2
+npm WARN Found: @babel/core@7.21.3
+npm WARN node_modules/@babel/preset-env/node_modules/@babel/core
+npm WARN   peer @babel/core@"^7.0.0-0" from babel-plugin-polyfill-corejs2@0.3.3
+npm WARN   node_modules/@babel/preset-env/node_modules/babel-plugin-polyfill-corejs2
+npm WARN     babel-plugin-polyfill-corejs2@"^0.3.3" from @babel/preset-env@7.20.2
+npm WARN     node_modules/@babel/preset-env
+npm WARN   46 more (babel-plugin-polyfill-corejs3, ...)
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer @babel/core@"^7.0.0-0" from @babel/preset-env@7.20.2
+npm WARN node_modules/@babel/preset-env
+npm WARN   @babel/preset-env@"^7.12.11" from @storybook/core-common@6.5.16
+npm WARN   node_modules/@storybook/builder-vite/node_modules/@storybook/core-common
+npm WARN   2 more (@storybook/mdx1-csf, @svgr/webpack)
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE could not resolve
+npm ERR! 
+npm ERR! While resolving: @nx/vite@17.2.6
+npm ERR! Found: vite@4.3.4
+npm ERR! node_modules/vite
+npm ERR!   peer vite@">=2.9.0" from vite-plugin-dts@2.3.0
+npm ERR!   node_modules/vite-plugin-dts
+npm ERR!     dev vite-plugin-dts@"2.3.0" from the root project
+npm ERR!   peer vite@">=2" from vite-plugin-eslint@1.8.1
+npm ERR!   node_modules/vite-plugin-eslint
+npm ERR!     dev vite-plugin-eslint@"^1.8.1" from the root project
+npm ERR!   8 more (vite-tsconfig-paths, ...)
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer vite@"^5.0.0" from @nx/vite@17.2.6
+npm ERR! node_modules/@nx/vite
+npm ERR!   @nx/vite@"17.2.6" from @nrwl/vite@17.2.6
+npm ERR!   node_modules/@nrwl/vite
+npm ERR!     @nrwl/vite@"17.2.6" from @nx/vite@17.2.6
+npm ERR!   dev @nx/vite@"17.2.6" from the root project
+npm ERR! 
+npm ERR! Conflicting peer dependency: vite@5.0.10
+npm ERR! node_modules/vite
+npm ERR!   peer vite@"^5.0.0" from @nx/vite@17.2.6
+npm ERR!   node_modules/@nx/vite
+npm ERR!     @nx/vite@"17.2.6" from @nrwl/vite@17.2.6
+npm ERR!     node_modules/@nrwl/vite
+npm ERR!       @nrwl/vite@"17.2.6" from @nx/vite@17.2.6
+npm ERR!     dev @nx/vite@"17.2.6" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! 
+npm ERR! For a full report see:
+npm ERR! C:\Users\ux430u\AppData\Local\npm-cache\_logs\2023-12-20T17_28_11_187Z-eresolve-report.txt
+
+npm ERR! A complete log of this run can be found in: C:\Users\ux430u\AppData\Local\npm-cache\_logs\2023-12-20T17_28_11_187Z-debug-0.log
