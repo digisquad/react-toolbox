@@ -39,3 +39,6 @@ testem.log
 Thumbs.db
 
 .nx/cache
+
+#Ignore yarn.lock  for security
+yarn.lock
